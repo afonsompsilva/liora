@@ -138,22 +138,23 @@ main.content {
   color: #f0f0f0;
 }
 
-/* GALERIA PADRONIZADA */
+/* GALERIA RIGOROSAMENTE PADRONIZADA */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 1rem;
 }
 
 .gallery img.photo-item {
-  width: 100%;
-  height: 150px;           /* Altura fixa para ficarem todas iguais */
-  object-fit: cover;       /* Ajusta a imagem sem distorcer o conteúdo */
+  width: 100% !important;
+  height: 160px !important;    /* Força todas as imagens a terem exatamente esta altura */
+  object-fit: cover !important;/* Recorta perfeitamente sem deformar */
   border-radius: 12px;
   filter: brightness(0.85);
   cursor: pointer;
   transition: filter 0.3s ease, transform 0.3s ease;
   box-shadow: 0 0 6px rgba(61, 142, 252, 0.12);
+  display: block;
 }
 
 .gallery img.photo-item:hover {
