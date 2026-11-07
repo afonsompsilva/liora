@@ -97,8 +97,8 @@ main.content {
 
 /* SEÇÕES DE CATEGORIA */
 .category-section {
-  margin-bottom: 4rem;
-  padding: 1.6rem 0;
+  margin-bottom: 3rem;
+  padding: 1.6rem;
   border-top: 1px solid #333;
   border-bottom: 1px solid #333;
   scroll-margin-top: 130px;
@@ -107,17 +107,16 @@ main.content {
   box-shadow: 0 0 6px rgba(61, 142, 252, 0.1);
 }
 
-/* --- ALTERADO --- */
 .category-header {
   display: flex;
-  flex-direction: row;      /* imagem → texto */
+  flex-direction: row;      
   align-items: center;
   gap: 1.2rem;
   justify-content: flex-start;
   text-align: left;
+  margin-bottom: 1.5rem;
 }
 
-/* --- ALTERADO (imagem menor) --- */
 .category-header img {
   width: 70px;
   height: 70px;
@@ -127,7 +126,6 @@ main.content {
   transition: filter 0.3s ease;
   box-shadow: 0 0 4px rgba(61, 142, 252, 0.15);
   cursor: pointer;
-  margin-left: 15px;
 }
 
 .category-header img:hover {
@@ -140,34 +138,33 @@ main.content {
   color: #f0f0f0;
 }
 
-/* GALERIA */
+/* GALERIA PADRONIZADA */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1rem;
 }
 
-.gallery img {
+.gallery img.photo-item {
   width: 100%;
-  max-width: 140px;
+  height: 150px;           /* Altura fixa para ficarem todas iguais */
+  object-fit: cover;       /* Ajusta a imagem sem distorcer o conteúdo */
   border-radius: 12px;
-  object-fit: cover;
   filter: brightness(0.85);
   cursor: pointer;
   transition: filter 0.3s ease, transform 0.3s ease;
   box-shadow: 0 0 6px rgba(61, 142, 252, 0.12);
-  margin: 0 auto;
 }
 
-.gallery img:hover {
+.gallery img.photo-item:hover {
   filter: brightness(1);
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 /* BOTÃO */
 .load-more {
   display: block;
-  margin: 1rem auto 0 auto;
+  margin: 1.5rem auto 0 auto;
   background-color: #3578e5;
   color: white;
   border: none;
@@ -175,6 +172,11 @@ main.content {
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
+  transition: background 0.3s;
+}
+
+.load-more:hover {
+  background-color: #2762c4;
 }
 
 /* FOOTER */
@@ -189,13 +191,9 @@ footer.footer {
 
 /* Responsivo */
 @media (max-width: 720px) {
-  .category-header {
-    flex-direction: row;
-    text-align: left;
-    align-items: center;
-  }
   .category-header img {
-    width: 100px;
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -248,4 +246,3 @@ footer.footer {
 .lightbox-close:hover {
   color: #f00;
 }
-
